@@ -1,0 +1,118 @@
+* {
+  font-family: 'jost';
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #D2EEFF;
+  overflow-x: hidden;
+}
+
+.timeline {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.timeline .item {
+  position: relative;
+  padding-left: 17px;
+}
+
+.timeline .item h2 {
+  font-size: 32px;
+  line-height: 80px;
+  color: #00a6fb;
+  position: relative;
+  display: inline-block;
+}
+
+.timeline .item h2::before {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 30px;
+  display: inline-block;
+  background-color: #006494;
+  -webkit-clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+          clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  left: -30px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+.timeline .item p {
+  text-align: justify;
+}
+
+.timeline .item::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 4px;
+  background-color: #006494;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.timeline.alternating {
+  margin: 50px 0;
+}
+
+.timeline.alternating .item:nth-child(odd) {
+  width: 50%;
+  text-align: right;
+}
+
+.timeline.alternating .item:nth-child(odd)::before {
+  left: 100%;
+}
+
+.timeline.alternating .item:nth-child(odd) h2 {
+  margin-right: 15px;
+}
+
+.timeline.alternating .item:nth-child(odd) h2:before {
+  content: "";
+  right: -30px;
+  left: unset;
+  -webkit-clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+          clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+}
+
+.timeline.alternating .item:nth-child(odd) p {
+  text-align: right;
+}
+
+.timeline.alternating .item:nth-child(even) {
+  text-align: left;
+  -webkit-transform: translateX(50%);
+          transform: translateX(50%);
+}
+
+.timeline.alternating .item:nth-child(even) p {
+  text-align: left;
+}
+
+.timeline.alternating .item:nth-child(even)::before {
+  content: "";
+  left: 0;
+}
+
+.timeline.alternating .item::before {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 4px;
+  background-color: #006494;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+/*# sourceMappingURL=style.css.map */

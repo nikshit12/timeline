@@ -1,0 +1,116 @@
+@import "./variables";
+
+* {
+    font-family: 'jost';
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: $light;
+    overflow-x: hidden;
+}
+
+.timeline {
+    max-width: 1000px;
+    margin: 0 auto;
+
+    .item {
+
+        position: relative;
+        padding-left: 17px;
+
+        h2 {
+            font-size: 32px;
+            line-height: 80px;
+            color: $primary;
+            position: relative;
+            display: inline-block;
+
+            &::before {
+                content: "";
+                position: absolute;
+                height: 20px;
+                width: 30px;
+                display: inline-block;
+                background-color: $secondary;
+                clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+                left: -30px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+        }
+
+        p {
+            text-align: justify;
+        }
+
+        &::before {
+            content: "";
+            display: inline-block;
+            height: 100%;
+            width: 4px;
+            background-color: $secondary;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+    }
+
+    &.alternating {
+        margin: 50px 0;
+
+        .item {
+            &:nth-child(odd) {
+                width: 50%;
+                text-align: right;
+
+                &::before {
+                    left: 100%;
+                }
+
+                h2 {
+                    margin-right: 15px;
+
+                    &:before {
+                        content: "";
+                        right: -30px;
+                        left: unset;
+                        clip-path: polygon(100% 0%, 75% 50%, 100% 100%, 25% 100%, 0% 50%, 25% 0%);
+                    }
+                }
+
+                p {
+                    text-align: right;
+                }
+            }
+
+            &:nth-child(even) {
+                text-align: left;
+                transform: translateX(50%);
+
+                p {
+                    text-align: left;
+                }
+
+                &::before {
+                    content: "";
+                    left: 0;
+                }
+            }
+
+            &::before {
+                content: "";
+                display: inline-block;
+                height: 100%;
+                width: 4px;
+                background-color: $secondary;
+                position: absolute;
+                left: 50%;
+                top: 0;
+                transform: translateX(-50%);
+            }
+        }
+    }
+}
